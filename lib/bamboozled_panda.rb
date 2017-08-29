@@ -1,7 +1,7 @@
 require 'net/http'
 require 'uri'
 
-module PandaPay
+module BamboozledPanda 
 
   # Panda Pay takes 1% + 2.9% + 30c per donation from credit/debit card donations
   #                 1% + 25c        per donation from ACH donations, but to get this we need to talk to them more
