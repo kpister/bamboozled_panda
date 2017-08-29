@@ -38,7 +38,7 @@ module BamboozledPanda
     request.basic_auth(secret_key, '')
     request.set_form_data(
       "amount" => amount,
-      "destination_ein" => charity_id
+      "destination" => charity_id
     )
 
     req_options = {
