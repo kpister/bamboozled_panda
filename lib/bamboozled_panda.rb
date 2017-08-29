@@ -7,7 +7,7 @@ module BamboozledPanda
   #                 1% + 25c        per donation from ACH donations, but to get this we need to talk to them more
 
   # this is used to create a "pool" of money from which we will take when using `transfer_to_grant`
-  def self.create_donation(amount, source, secret_key) 
+  def self.create_donation(amount, source, email, secret_key) 
     uri = URI.parse("https://api.pandapay.io/v1/donations")
     request = Net::HTTP::Post.new(uri)
     request.basic_auth(secret_key, '')
@@ -15,7 +15,7 @@ module BamboozledPanda
       "amount" => amount,
       "currency" => "usd",
       "source" => source,
-      "receipt_email" => "info@ethn.io"
+      "receipt_email" => email
     )
 
     req_options = {

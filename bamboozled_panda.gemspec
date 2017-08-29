@@ -7,7 +7,6 @@ Gem::Specification.new do |s|
   s.authors = ["Kaiser Pister"]
   s.email = 'pisterk@gmail.com'
   s.files = ["lib/bamboozled_panda.rb"]
-  s.homepage = 'https://rubygems.org/gems/bamboozled_panda'
-  s.source = 'https://github.com/kpister/bamboozled_panda'
+  s.homepage = 'https://github.com/kpister/bamboozled_panda'
   s.license = 'MIT'
 end
