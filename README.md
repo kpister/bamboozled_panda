@@ -16,7 +16,7 @@ require 'bamboozled_panda'
 BamboozledPanda::create_donation(50000, #amount in cents
                                  'source_token', #credit card or ach token from pandapay tokenizer
                                  'receipt@email.com', #receipt email for tax refund
-                                 'sk_live_key #secret key from pandapay
+                                 'sk_live_key' #secret key from pandapay
                                  ) # This will return [response_code, response_body]
                                  
 BamboozledPanda::create_grant(2000, #amount in cents 
