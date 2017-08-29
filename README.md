@@ -11,8 +11,18 @@ Right now you can create a donation and create a grant.
 
 ``` ruby
 require 'bamboozled_panda'
-BamboozledPanda::create_donation(50000, 'source_token', 'receipt@email.com', 'sk_live_key') # amount in cents, credit card token generated from pandapay, email for your receipt, secret key from pandapay
-BamboozledPanda::create_grant(2000, 'charity_eid', 'sk_live_key') # amount in cents, charity tax id, secret key
+
+
+BamboozledPanda::create_donation(50000, #amount in cents
+                                 'source_token', #credit card or ach token from pandapay tokenizer
+                                 'receipt@email.com', #receipt email for tax refund
+                                 'sk_live_key' #secret key from pandapay
+                                 ) # This will return [response_code, response_body]
+                                 
+BamboozledPanda::create_grant(2000, #amount in cents 
+                              'charity_eid', #the tax id of the charity
+                              'sk_live_key' #secret key from pandapay
+                              ) # This will return [response_code, response_body]
 ```
 
 This is version 0.0.1, and we will add more as we go!
