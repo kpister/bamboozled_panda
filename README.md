@@ -42,13 +42,25 @@ BamboozledPanda::create_customer(email@account.com, #your email account
 
 require 'bamboozled_panda'
 
-BamboozledPanda::get_customers('secret_token') # return a list of your customer objects
 
-BamboozledPanda::get_grants('secret_token') # return a list of your grants
+# return a list of your customer objects
 
-BamboozledPanda::get_donations('secret_token') # return a list of your donations
+BamboozledPanda::get_customers('secret_token') 
 
-BamboozledPanda::get_available_funds('secret_token') # return the current funds available to make grants with
+
+# return a list of your grants
+
+BamboozledPanda::get_grants('secret_token') 
+
+
+# return a list of your donations
+
+BamboozledPanda::get_donations('secret_token') 
+
+
+# return the current funds available to make grants with
+
+BamboozledPanda::get_available_funds('secret_token') 
 
 ```
 
@@ -58,8 +70,8 @@ BamboozledPanda::get_available_funds('secret_token') # return the current funds 
 {:code=>"200", 
  :body=>{"object"=>"list", "url"=>"/v1/customers", "has_more"=>false, 
    "data"=>[
-     {"id"=>"cus_2PfOqGFHDJ...", "object"=>"customer", "email"=>"pandapay@gmail.com", "livemode"=>true, "cards"=>[{"id"=>"card_Buv...", "object"=>"card", "created"=>1503964106, "livemode"=>true, "customer"=>"cus_2PfOqGFHDJ...", "last4"=>"20XX"}]}, 
-     {"id"=>"cus_AxdtGz5...", "object"=>"customer", "email"=>"kaiser@ethn.io", "livemode"=>true, "cards"=>[{"id"=>"card_LuYUF4z46...", "object"=>"card", "created"=>1503959644, "livemode"=>true, "customer"=>"cus_AxdtGz5...", "last4"=>"20XX"}]}]}}
+     {"id"=>"cus_2PfOqGF...", "object"=>"customer", "email"=>"pandapay@gmail.com", "livemode"=>true, "cards"=>[{"id"=>"card_Buv...", "object"=>"card", "created"=>1503964106, "livemode"=>true, "customer"=>"cus_2PfOqGF...", "last4"=>"20XX"}]}, 
+     {"id"=>"cus_AxdtGz5...", "object"=>"customer", "email"=>"kaiser@ethn.io", "livemode"=>true, "cards"=>[{"id"=>"card_LuY...", "object"=>"card", "created"=>1503959644, "livemode"=>true, "customer"=>"cus_AxdtGz5...", "last4"=>"20XX"}]}]}}
 ```
 
 This is version 0.0.3, and we will add more as we go!

@@ -104,7 +104,7 @@ module BamboozledPanda
     {code: donations.code, body: JSON.parse(donations.body)}
   end
 
-  def self.get_unallocated_donation_amount(secret_key)
+  def self.get_available_funds(secret_key)
     donations = get('donations', secret_key)
     grants = get('grants', secret_key)
 

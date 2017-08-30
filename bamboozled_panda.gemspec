@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'bamboozled_panda'
-  s.version = '0.0.3'
+  s.version = '0.0.3.1'
   s.date = '2017-08-30'
   s.summary = 'pandapay.io API wrapper'
   s.description = 'A simple, easy to use, ruby wrapper for the Panda Pay API'
