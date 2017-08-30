@@ -31,7 +31,7 @@ BamboozledPanda::create_grant(2000, #amount in cents
                              ) # This will return {code: response_code, body: response_body} 
 
 BamboozledPanda::create_customer(email@account.com, #your email account
-                                 'source_token', #this is a recurring credit card or ach token rom pandapay
+                                 'source_token', #this is a recurring credit card or ach token from pandapay
                                  'secret_token' #secret key from pandapay
                                 ) # This will return {code: response_code, body: response_body} 
 
@@ -52,10 +52,14 @@ BamboozledPanda::get_available_funds('secret_token') # return the current funds 
 
 ```
 
-```json
+```ruby
 # example response
 
-{:code=>"200", :body=>{"object"=>"list", "url"=>"/v1/customers", "has_more"=>false, "data"=>[{"id"=>"cus_2PfOqGFHDJ...", "object"=>"customer", "email"=>"pandapay@gmail.com", "livemode"=>true, "cards"=>[{"id"=>"card_Buv...", "object"=>"card", "created"=>1503964106, "livemode"=>true, "customer"=>"cus_2PfOqGFHDJ...", "last4"=>"20XX"}]}, {"id"=>"cus_AxdtGz5...", "object"=>"customer", "email"=>"kaiser@ethn.io", "livemode"=>true, "cards"=>[{"id"=>"card_LuYUF4z46...", "object"=>"card", "created"=>1503959644, "livemode"=>true, "customer"=>"cus_AxdtGz5...", "last4"=>"20XX"}]}]}}
+{:code=>"200", 
+ :body=>{"object"=>"list", "url"=>"/v1/customers", "has_more"=>false, 
+   "data"=>[
+     {"id"=>"cus_2PfOqGFHDJ...", "object"=>"customer", "email"=>"pandapay@gmail.com", "livemode"=>true, "cards"=>[{"id"=>"card_Buv...", "object"=>"card", "created"=>1503964106, "livemode"=>true, "customer"=>"cus_2PfOqGFHDJ...", "last4"=>"20XX"}]}, 
+     {"id"=>"cus_AxdtGz5...", "object"=>"customer", "email"=>"kaiser@ethn.io", "livemode"=>true, "cards"=>[{"id"=>"card_LuYUF4z46...", "object"=>"card", "created"=>1503959644, "livemode"=>true, "customer"=>"cus_AxdtGz5...", "last4"=>"20XX"}]}]}}
 ```
 
 This is version 0.0.3, and we will add more as we go!
