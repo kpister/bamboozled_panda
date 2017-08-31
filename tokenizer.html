@@ -1,0 +1,55 @@
+<!-- Taken from panda pay's dashboard -->
+<!-- Include PandaJS -->
+<script src="https://YOUR-JAVASCRIPT-SRC-HERE"></script>
+
+<form id="panda_cc_form">
+  <div>
+    <label>First Name</label>
+    <input type="text" data-panda="first_name">
+  </div>
+
+  <div>
+    <label>Last Name</label>
+    <input type="text" data-panda="last_name">
+  </div>
+
+  <div>
+    <label>Credit Card Number</label>
+    <input type="text" data-panda="credit_card">
+  </div>
+
+  <div>
+    <label>Expiration</label>
+    <input type="text" data-panda="expiration">
+  </div>
+
+  <div>
+    <label>CVV</label>
+    <input type="text" data-panda="cvv">
+  </div>
+
+  <div id="tokenize">
+    <button type="submit">Tokenize!</button>
+  </div>
+</form>
+
+<script>
+// Call Panda.init() with your Panda Publishable Key and the DOM id of the
+// credit card-related form element
+
+Panda.init('YOUR-PUBLIC-KEY-HERE', 'panda_cc_form');
+
+Panda.on('success', function(cardToken) {
+  // You now have a token you can use to refer to that credit card later.
+  // This token is used in PandaPay API calls for creating donations and grants
+  // so that you don't have to worry about security concerns with dealing with
+  // credit card data.
+  console.log(cardToken)
+});
+
+Panda.on('error', function(errors) {
+  // errors is a human-readable list of things that went wrong
+  //  (invalid card number, missing last name, etc.)
+  console.log(errors)
+});
+</script>

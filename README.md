@@ -5,9 +5,18 @@ A simple ruby gem wrapper for the pandapay.io api
 
 Be sure to set up your account with them first. You will need a private key, and a source token
 
-For some more information: [The Panda Pay 'docs'](http://docs.pandapay.io/getting-started-pandapay-api/api-reference)
+For some more information: [The Panda Pay docs](http://docs.pandapay.io/getting-started-pandapay-api/api-reference)
 
 # Usage:
+
+First visit Pandapay.io, sign up for a developer account and enter the dashboard.
+
+Then create a payment token using the tokenizer.html template. Just input your public key and your js src from your dashboard.
+
+Use that payment token directly or create a customer for recurring use. Note that the payment token will expire after a single use unless you attach it to a customer object. 
+
+With the payment/source token and your secret key you can make any calls you want.
+
 
 ```ruby
 # To create some stuff...
@@ -44,22 +53,18 @@ require 'bamboozled_panda'
 
 
 # return a list of your customer objects
-
 BamboozledPanda::get_customers('secret_token') 
 
 
 # return a list of your grants
-
 BamboozledPanda::get_grants('secret_token') 
 
 
 # return a list of your donations
-
 BamboozledPanda::get_donations('secret_token') 
 
 
 # return the current funds available to make grants with
-
 BamboozledPanda::get_available_funds('secret_token') 
 
 ```
@@ -67,14 +72,26 @@ BamboozledPanda::get_available_funds('secret_token')
 ```ruby
 # example response
 
-{:code=>"200", 
- :body=>{"object"=>"list", "url"=>"/v1/customers", "has_more"=>false, 
-   "data"=>[
-     {"id"=>"cus_2PfOqGF...", "object"=>"customer", "email"=>"pandapay@gmail.com", "livemode"=>true, "cards"=>[{"id"=>"card_Buv...", "object"=>"card", "created"=>1503964106, "livemode"=>true, "customer"=>"cus_2PfOqGF...", "last4"=>"20XX"}]}, 
-     {"id"=>"cus_AxdtGz5...", "object"=>"customer", "email"=>"kaiser@ethn.io", "livemode"=>true, "cards"=>[{"id"=>"card_LuY...", "object"=>"card", "created"=>1503959644, "livemode"=>true, "customer"=>"cus_AxdtGz5...", "last4"=>"20XX"}]}]}}
+{
+  :code=>"200", 
+  :body=>{"object"=>"list", "url"=>"/v1/customers", "has_more"=>false, 
+    "data"=>[
+      {"id"=>"cus_2PfOqGF...", "object"=>"customer", "email"=>"pandapay@gmail.com", "livemode"=>true, 
+        "cards"=>[
+          {"id"=>"card_Buv...", "object"=>"card", "created"=>1503964106, "livemode"=>true, "customer"=>"cus_2PfOqGF...", "last4"=>"20XX"}
+        ]
+      }, 
+      {"id"=>"cus_AxdtGz5...", "object"=>"customer", "email"=>"kaiser@ethn.io", "livemode"=>true, 
+        "cards"=>[
+          {"id"=>"card_LuY...", "object"=>"card", "created"=>1503959644, "livemode"=>true, "customer"=>"cus_AxdtGz5...", "last4"=>"20XX"}
+        ]
+      }
+    ]
+  }
+}
 ```
 
-This is version 0.0.3, and we will add more as we go!
+This is version 0.0.4, and we will add more as we go!
 
 Panda Pay takes: 
 
