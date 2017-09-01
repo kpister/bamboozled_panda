@@ -1,55 +1,86 @@
-<!-- Taken from panda pay's dashboard -->
-<!-- Include PandaJS -->
-<script src="https://YOUR-JAVASCRIPT-SRC-HERE"></script>
+<!doctype html>
 
-<form id="panda_cc_form">
-  <div>
-    <label>First Name</label>
-    <input type="text" data-panda="first_name">
-  </div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
 
-  <div>
-    <label>Last Name</label>
-    <input type="text" data-panda="last_name">
-  </div>
+    <title>Panda Pay Card Tokenizer</title>
+    <meta name="description" content="Panda Pay Card Tokenizer">
+    <meta name="author" content="PandaPay and Kaiser">
+  </head>
 
-  <div>
-    <label>Credit Card Number</label>
-    <input type="text" data-panda="credit_card">
-  </div>
+  <!-- modified from panda pay's dashboard -->
+  <!-- Include PandaJS -->
+  <script src="https://JSCODEHERE.cloudfront.net/panda-v0.0.5.min.js"></script>
 
-  <div>
-    <label>Expiration</label>
-    <input type="text" data-panda="expiration">
-  </div>
 
-  <div>
-    <label>CVV</label>
-    <input type="text" data-panda="cvv">
-  </div>
+  <form id="panda_public">
+    <div>
+      <label>Don't forget to open console and turn on logging!</label>
+    </div>
+    <br>
+    <div>
+      <label>Publishable Key</label>
+      <input type="text" name="public_key">
+    </div>
+    <div>
+      <button onclick="return setup()">Step 1</button>
+    </div>
+  </form>
 
-  <div id="tokenize">
-    <button type="submit">Tokenize!</button>
-  </div>
-</form>
+  <form id="panda_cc_form">
+    <div>
+      <label>First Name</label>
+      <input type="text" data-panda="first_name">
+    </div>
 
-<script>
-// Call Panda.init() with your Panda Publishable Key and the DOM id of the
-// credit card-related form element
+    <div>
+      <label>Last Name</label>
+      <input type="text" data-panda="last_name">
+    </div>
 
-Panda.init('YOUR-PUBLIC-KEY-HERE', 'panda_cc_form');
+    <div>
+      <label>Credit Card Number</label>
+      <input type="text" data-panda="credit_card">
+    </div>
 
-Panda.on('success', function(cardToken) {
-  // You now have a token you can use to refer to that credit card later.
-  // This token is used in PandaPay API calls for creating donations and grants
-  // so that you don't have to worry about security concerns with dealing with
-  // credit card data.
-  console.log(cardToken)
-});
+    <div>
+      <label>Expiration</label>
+      <input type="text" data-panda="expiration">
+    </div>
 
-Panda.on('error', function(errors) {
-  // errors is a human-readable list of things that went wrong
-  //  (invalid card number, missing last name, etc.)
-  console.log(errors)
-});
-</script>
+    <div>
+      <label>CVV</label>
+      <input type="text" data-panda="cvv">
+    </div>
+
+    <div id="tokenize">
+      <button type="submit">Step 2!</button>
+    </div>
+  </form>
+
+  <script>
+  // Call Panda.init() with your Panda Publishable Key and the DOM id of the
+  // credit card-related form element
+
+  function setup(){
+    Panda.init(document.forms['panda_public'].elements['public_key'].value, 'panda_cc_form');
+
+    Panda.on('success', function(cardToken) {
+      // You now have a token you can use to refer to that credit card later.
+      // This token is used in PandaPay API calls for creating donations and grants
+      // so that you don't have to worry about security concerns with dealing with
+      // credit card data.
+      console.log(cardToken);
+    });
+
+    Panda.on('error', function(errors) {
+      // errors is a human-readable list of things that went wrong
+      //  (invalid card number, missing last name, etc.)
+      console.log(errors);
+    });
+
+    return false;
+  }
+  </script>
+</html>

@@ -13,6 +13,8 @@ First visit Pandapay.io, sign up for a developer account and enter the dashboard
 
 Then create a payment token using the tokenizer.html template. Just input your public key and your js src from your dashboard.
 
+You can use this link. You will need to provide your publishable key and then open the js console. [tokenizer.html](http://rawgit.com/kpister/bamboozled_panda/master/tokenizer.html)
+
 Use that payment token directly or create a customer for recurring use. Note that the payment token will expire after a single use unless you attach it to a customer object. 
 
 With the payment/source token and your secret key you can make any calls you want.
@@ -96,4 +98,4 @@ This is version 0.0.4, and we will add more as we go!
 Panda Pay takes: 
 
                 1% + 2.9% + 30c per donation from credit/debit card donations
-                1% + 25c        per donation from ACH donations, but to get this we need to talk to them more
+                1% + 25c        per donation from ACH donations, but to get this you need to talk to them personally
