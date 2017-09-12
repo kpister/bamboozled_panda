@@ -13,7 +13,7 @@ First visit Pandapay.io, sign up for a developer account and enter the dashboard
 
 Then create a payment token using the tokenizer.html template. Just input your public key and your js src from your dashboard.
 
-You can use this link. You will need to provide your publishable key and then open the js console. [tokenizer.html](http://rawgit.com/kpister/bamboozled_panda/master/tokenizer.html)
+You can use this link. You will need to provide your publishable key and then open the js console. [tokenizer.html](https://rawgit.com/kpister/bamboozled_panda/master/tokenizer.html)
 
 Use that payment token directly or create a customer for recurring use. Note that the payment token will expire after a single use unless you attach it to a customer object. 
 
