@@ -25,25 +25,23 @@ With the payment/source token and your secret key you can make any calls you wan
 
 require 'bamboozled_panda'
 
+BamboozledPanda.set_key('private_key_here')
 
 # PLEASE NOTE: credit card tokens are valid for a single donation unless you create a customer
 
 # All response bodies are JSON format
 
-BamboozledPanda::create_donation(50000, #amount in cents
+BamboozledPanda.create_donation(50000, #amount in cents
                                  'source_token', #credit card, ach, or customer token from pandapay tokenizer 
-                                 'receipt@email.com', #receipt email for tax refund
-                                 'sk_live_key' #secret key from pandapay
+                                 'receipt@email.com' #receipt email for tax refund
                                  ) # This will return {code: response_code, body: response_body} 
                                  
-BamboozledPanda::create_grant(2000, #amount in cents 
-                              'charity_eid', #the tax id of the charity
-                              'sk_live_key' #secret key from pandapay
+BamboozledPanda.create_grant(2000, #amount in cents 
+                              'charity_eid' #the tax id of the charity
                              ) # This will return {code: response_code, body: response_body} 
 
-BamboozledPanda::create_customer(email@account.com, #your email account
-                                 'source_token', #this is a recurring credit card or ach token from pandapay
-                                 'secret_token' #secret key from pandapay
+BamboozledPanda.create_customer(email@account.com, #your email account
+                                 'source_token' #this is a recurring credit card or ach token from pandapay
                                 ) # This will return {code: response_code, body: response_body} 
 
 ```
@@ -53,21 +51,22 @@ BamboozledPanda::create_customer(email@account.com, #your email account
 
 require 'bamboozled_panda'
 
+BamboozledPanda.set_key('private_key_here')
 
 # return a list of your customer objects
-BamboozledPanda::get_customers('secret_token') 
+BamboozledPanda.get_customers
 
 
 # return a list of your grants
-BamboozledPanda::get_grants('secret_token') 
+BamboozledPanda.get_grants
 
 
 # return a list of your donations
-BamboozledPanda::get_donations('secret_token') 
+BamboozledPanda.get_donations
 
 
 # return the current funds available to make grants with
-BamboozledPanda::get_available_funds('secret_token') 
+BamboozledPanda.get_available_funds
 
 ```
 
