@@ -92,7 +92,7 @@ BamboozledPanda.get_available_funds
 }
 ```
 
-This is version 0.0.4, and we will add more as we go!
+This is version 0.1.0, and we will add more as we go!
 
 Panda Pay takes: 
 
