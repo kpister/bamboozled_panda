@@ -34,15 +34,15 @@ BamboozledPanda.set_key('private_key_here')
 BamboozledPanda.create_donation(50000, #amount in cents
                                  'source_token', #credit card, ach, or customer token from pandapay tokenizer 
                                  'receipt@email.com', #receipt email for tax refund
-                                 'destination-ein' # OPTIONAL, if set: this will create an immediate grant object for the given charity
+                                 'charity_eid' # OPTIONAL, if set: this will create an immediate grant object for the given charity
                                  ) # This will return {code: response_code, body: response_body} 
 
 # Examples:
 
-# Create a donation without a destination. This will be used later when we create a grant.
+# Create a donation without a charity. This will be used later when we create a grant.
 BamboozledPanda.create_donation(50000, 'sk_live_asdfasfasdf', 'kpister@github.com')
 
-# Create a donation with a destination. This immediately creates a connected grant.
+# Create a donation with a charity. This immediately creates a connected grant.
 BamboozledPanda.create_donation(50000, 'sk_live_asdfasfasdf', 'kpister@github.com', '68-12312323')
 
 BamboozledPanda.create_grant(2000, #amount in cents 
