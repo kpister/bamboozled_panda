@@ -1,9 +1,9 @@
 
 # Bamboozled Panda
 
-A simple ruby gem wrapper for the pandapay.io api
+A simple ruby gem wrapper for the pandapay.io api.
 
-Be sure to set up your account with them first. You will need a private key, and a source token
+Be sure to set up your account with them first. You will need a private key, and a source token.
 
 For some more information: [The Panda Pay docs](http://docs.pandapay.io/getting-started-pandapay-api/api-reference)
 
@@ -36,7 +36,15 @@ BamboozledPanda.create_donation(50000, #amount in cents
                                  'receipt@email.com', #receipt email for tax refund
                                  'destination-ein' # OPTIONAL, if set: this will create an immediate grant object for the given charity
                                  ) # This will return {code: response_code, body: response_body} 
-                                 
+
+# Examples:
+
+# Create a donation without a destination. This will be used later when we create a grant.
+BamboozledPanda.create_donation(50000, 'sk_live_asdfasfasdf', 'kpister@github.com')
+
+# Create a donation with a destination. This immediately creates a connected grant.
+BamboozledPanda.create_donation(50000, 'sk_live_asdfasfasdf', 'kpister@github.com')
+
 BamboozledPanda.create_grant(2000, #amount in cents 
                               'charity_eid' #the tax id of the charity
                              ) # This will return {code: response_code, body: response_body} 
