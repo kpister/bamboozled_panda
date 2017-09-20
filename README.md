@@ -33,7 +33,8 @@ BamboozledPanda.set_key('private_key_here')
 
 BamboozledPanda.create_donation(50000, #amount in cents
                                  'source_token', #credit card, ach, or customer token from pandapay tokenizer 
-                                 'receipt@email.com' #receipt email for tax refund
+                                 'receipt@email.com', #receipt email for tax refund
+                                 'destination-ein' # OPTIONAL, if set: this will create an immediate grant object for the given charity
                                  ) # This will return {code: response_code, body: response_body} 
                                  
 BamboozledPanda.create_grant(2000, #amount in cents 
@@ -92,7 +93,7 @@ BamboozledPanda.get_available_funds
 }
 ```
 
-This is version 0.1.0, and we will add more as we go!
+This is version 0.1.1, and we will add more as we go!
 
 Panda Pay takes: 
 

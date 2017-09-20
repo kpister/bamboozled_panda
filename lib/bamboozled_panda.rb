@@ -12,7 +12,7 @@ module BamboozledPanda
   end
 
   # this is used to create a "pool" of money from which we will take when using `transfer_to_grant`
-  def self.create_donation(amount, source, email)
+  def self.create_donation(amount, source, email, destination_ein="")
     raise "Must set secret key with set_key" unless @secret_key
 
     uri = URI.parse("https://api.pandapay.io/v1/donations")
@@ -22,7 +22,8 @@ module BamboozledPanda
       "amount" => amount,
       "currency" => "usd",
       "source" => source,
-      "receipt_email" => email
+      "receipt_email" => email,
+      "destination" => destination_ein
     )
 
     req_options = {
