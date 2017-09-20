@@ -43,7 +43,7 @@ BamboozledPanda.create_donation(50000, #amount in cents
 BamboozledPanda.create_donation(50000, 'sk_live_asdfasfasdf', 'kpister@github.com')
 
 # Create a donation with a destination. This immediately creates a connected grant.
-BamboozledPanda.create_donation(50000, 'sk_live_asdfasfasdf', 'kpister@github.com')
+BamboozledPanda.create_donation(50000, 'sk_live_asdfasfasdf', 'kpister@github.com', '68-12312323')
 
 BamboozledPanda.create_grant(2000, #amount in cents 
                               'charity_eid' #the tax id of the charity
