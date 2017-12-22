@@ -109,4 +109,4 @@ Panda Pay takes:
                 1% + 25c        per donation from ACH donations, but to get this you need to talk to them personally
                 
 #### Tags
-web, ruby, personal
+web, ruby
